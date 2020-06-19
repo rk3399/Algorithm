@@ -117,7 +117,6 @@ int main1(void)
     arm_pid_instance_f32  s3;
 	int delay = 0xffff;
 
-
 	while(1){
         pid_init(&s1);
         pid_init(&s2);
