@@ -36,6 +36,7 @@ float pid_start(pid *s, float setv, float cunv)
 //(kp + ki + kd) * e0 - (kp + kd * 2) * e1 + kd * e2
 
 
+    
 
     s->err_2 = s->err_1;
     s->err_1 = err_0;
