@@ -43,6 +43,7 @@ int main(void)
 	pfunt pfun;
 	char con = ({int a = 0; int b = 1; a += b; b + a;});//gnu特有语法({}), 值为最后一条语句的值
 	printf(" %d", con);
+	printf(" %d", con ?: 3);//gnu特有语法 等同于con ? con : 3
 	printf(" %p %p %p", chs, &chs, &chs[0]);
 	printf(" %p %p %p", chs/*字符类型数组首地址*/ + 1, &chs/*数组类型指针*/ + 1);
 	printf(" %p", pfuns[0](1, 2));
