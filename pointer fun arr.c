@@ -25,24 +25,26 @@ pfunt pfuns_b[] = {
 	fun2, 
 	fun3
 };
-//pfuns ºÍ pfuns_b Í¬ÎªÖ¸Õëº¯ÊıÖ¸ÕëÊı×é
+//pfuns å’Œ pfuns_b åŒä¸ºæŒ‡é’ˆå‡½æ•°æŒ‡é’ˆæ•°ç»„
 
 
 char chs[] = "abc";
 int nums[3];
 int *anums[3];
 int (*pnums)[3] = &nums;
-// ÓÅÏÈ¼¶£º () > [] > *
-//numsÎªÊı×é
-//anumsÎªÖ¸ÕëÊı×é
-//pnumsÎªÊı×éÖ¸Õë
+int *(*panums)[3] = &anums;
+// ä¼˜å…ˆçº§ï¼š () > [] > *
+//numsä¸ºæ•°ç»„
+//anumsä¸ºæŒ‡é’ˆæ•°ç»„
+//pnumsä¸ºæ•°ç»„æŒ‡é’ˆ
+//panumsä¸ºæŒ‡é’ˆæ•°ç»„æŒ‡é’ˆ
 int main(void)
 {
 	pfunt pfun;
-	char con = ({int a = 0; int b = 1; a += b; b + a;});//gnuÌØÓĞÓï·¨({}), ÖµÎª×îºóÒ»ÌõÓï¾äµÄÖµ
+	char con = ({int a = 0; int b = 1; a += b; b + a;});//gnuç‰¹æœ‰è¯­æ³•({}), å€¼ä¸ºæœ€åä¸€æ¡è¯­å¥çš„å€¼
 	printf(" %d", con);
 	printf(" %p %p %p", chs, &chs, &chs[0]);
-	printf(" %p %p %p", chs/*×Ö·ûÀàĞÍÊı×éÊ×µØÖ·*/ + 1, &chs/*Êı×éÀàĞÍÖ¸Õë*/ + 1);
+	printf(" %p %p %p", chs/*å­—ç¬¦ç±»å‹æ•°ç»„é¦–åœ°å€*/ + 1, &chs/*æ•°ç»„ç±»å‹æŒ‡é’ˆ*/ + 1);
 	printf(" %p", pfuns[0](1, 2));
 	pfun = fun1;
 	printf(" %p", pfun(1, 2));
